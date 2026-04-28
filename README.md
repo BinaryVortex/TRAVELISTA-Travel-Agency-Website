@@ -24,7 +24,15 @@ The screenshot above shows the landing page (saved in the repository as `Screens
 - Vite
 - CSS
 
-## Getting started
+## Getting started (improved)
+
+This section gives you everything you need to run the project locally and build production artifacts.
+
+Prerequisites
+
+- Node.js (LTS) — recommended: 18.x or later. Check with `node -v`.
+- npm (comes with Node) or yarn (optional). Check with `npm -v` or `yarn -v`.
+- Optional: a modern browser (Chrome, Firefox, Safari) for testing.
 
 1. Clone the repository
 
@@ -33,15 +41,75 @@ The screenshot above shows the landing page (saved in the repository as `Screens
 
 2. Install dependencies
 
-   npm install
+- Using npm (recommended):
 
-3. Start the development server
+  npm install
 
-   npm run dev
+- Or using yarn:
 
-4. Open the app
+  yarn install
 
-   The dev server will print a local URL (usually http://localhost:5173). Open it in your browser.
+3. Local development
+
+- Start the dev server (Vite):
+
+  npm run dev
+
+  or with yarn:
+
+  yarn dev
+
+- Open the URL printed by the dev server (commonly http://localhost:5173).
+
+4. Environment variables (optional)
+
+This project does not require environment variables by default. If you add API keys or services later, create a `.env` file at the repository root and add them there (example `.env.local`):
+
+  REACT_APP_API_URL=https://example.com
+
+Be sure to add `.env` to `.gitignore` for secrets.
+
+5. Build & preview production
+
+- Build production bundle:
+
+  npm run build
+
+  or
+
+  yarn build
+
+- Preview the production build locally:
+
+  npm run preview
+
+  or
+
+  yarn preview
+
+6. Common scripts (check package.json if changed)
+
+- `npm run dev` — start dev server
+- `npm run build` — build production bundle
+- `npm run preview` — preview production build
+
+7. Troubleshooting
+
+- If you see dependency errors, delete `node_modules` and reinstall:
+
+  rm -rf node_modules package-lock.json
+  npm install
+
+- If port 5173 is already in use, either free it or run Vite on a different port:
+
+  PORT=3000 npm run dev
+
+- TypeScript errors: run `npm run dev` and address type errors reported in the terminal or the editor.
+
+8. Tips
+
+- Use an editor with TypeScript support (VS Code) for the best DX.
+- Run a formatter/linter if present (add scripts for `prettier`/`eslint` as needed).
 
 ## Build for production
 
